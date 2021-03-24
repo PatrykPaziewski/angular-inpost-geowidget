@@ -1,27 +1,26 @@
-# AngularInpostGeowidget
+# Angular Inpost Geowidget Workspace
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
-## Development server
+## Testing the library
+Run `npm run-script build` to build a widget library locally. The output files will be stored in `/dist` folder.
+Run `npm start` for a dev server for angular-inpost-geowidget-example app. Navigate to `http://localhost:4200/`. This is a simple application which uses locally built an "angular-inpost-geowidget" and consumes it.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Using a widget
 
-## Code scaffolding
+1. Add inpost widget styles `<link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css" />` to your `src/index.html` file. 
+2. Run `npm install [XXX]` to add a npm library to your project.
+3. Use widget component in template `<lib-angular-inpost-geowidget></lib-angular-inpost-geowidget>`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Parameters
 
-## Build
+todo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Demo
 
-## Running unit tests
+todo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contribute
 
-## Running end-to-end tests
+todo
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,20 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { get } from 'scriptjs';
+import { IGeoWidgetInitConfig } from './angular-inpost-geowidget.model';
+
+declare var easyPack;
 
 @Component({
   selector: 'lib-angular-inpost-geowidget',
   template: `
-    <p>
-      angular-inpost-geowidget works!
-    </p>
+    <div [id]="id"></div>
   `,
-  styles: [
-  ]
+  styles: []
 })
 export class AngularInpostGeowidgetComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public initialConfig: IGeoWidgetInitConfig = {};
 
-  ngOnInit(): void {
+  @Input()
+  public id = 'easypack-map';
+
+  @Output()
+  public onPointSelect: EventEmitter<any> = new EventEmitter<any>();
+
+  private map: any;
+
+  constructor() {
+  }
+
+  public ngOnInit(): void {
+    get('https://geowidget.easypack24.net/js/sdk-for-javascript.js', () => this._initMap());
+  }
+
+  private _initMap(): void {
+    easyPack.init(this.initialConfig);
+    this.map = new easyPack.mapWidget(this.id, point => this.onPointSelect.emit(point));
   }
 
 }

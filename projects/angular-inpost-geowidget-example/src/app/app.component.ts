@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-inpost-geowidget-example';
+
+  public selectPoint(point: any): void {
+    console.log('Selected point: ', point);
+  }
 }

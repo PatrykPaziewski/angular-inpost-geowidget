@@ -1,6 +1,6 @@
 {
   "name": "angular-inpost-geowidget",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve angular-inpost-geowidget-example",
@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~11.2.6",
     "@angular/router": "~11.2.6",
     "rxjs": "~6.6.0",
+    "scriptjs": "^2.5.9",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

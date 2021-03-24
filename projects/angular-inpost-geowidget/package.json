@@ -1,9 +1,23 @@
 {
   "name": "angular-inpost-geowidget",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Angular library to easy handle inpost geowidget to enable to select a parcel (paczkomat) in your angular project.",
+  "keywords": [
+    "angular",
+    "inpost",
+    "parcel",
+    "geowidget",
+    "paczkomaty"
+  ],
+  "author": {
+    "name": "Kacper Słotwiński",
+    "email": "kacper.slotwinski@gmail.com",
+    "url": "http://www.hky.pl"
+  },
   "peerDependencies": {
     "@angular/common": "^11.2.6",
-    "@angular/core": "^11.2.6"
+    "@angular/core": "^11.2.6",
+    "scriptjs": "^2.5.9"
   },
   "dependencies": {
     "tslib": "^2.0.0"
