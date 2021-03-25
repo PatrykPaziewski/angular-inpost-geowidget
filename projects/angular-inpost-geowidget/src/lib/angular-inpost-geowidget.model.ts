@@ -58,3 +58,9 @@ export enum GeoWidgetMapTypeEnum {
   GOOGLE_MAPS = 'google'
 }
 
+export enum GeowidgetTypeEnum {
+  WIDGET = 'WIDGET',
+  MODAL = 'MODAL',
+  DROPDOWN = 'DROPDOWN'
+}
+

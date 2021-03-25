@@ -2,23 +2,37 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
-## Code scaffolding
+## Using a widget
 
-Run `ng generate component component-name --project angular-inpost-geowidget` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-inpost-geowidget`.
-> Note: Don't forget to add `--project angular-inpost-geowidget` or else it will be added to the default project in your `angular.json` file. 
+1. Add inpost widget styles `<link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css" />` to your `src/index.html` file. 
+2. Run `npm install angular-inpost-geowidget` to add a npm library to your project.
+3. Use widget component in template `<lib-angular-inpost-geowidget></lib-angular-inpost-geowidget>`
 
-## Build
+## Examples of usage
 
-Run `ng build angular-inpost-geowidget` to build the project. The build artifacts will be stored in the `dist/` directory.
+Basic usage as map widget:
+```
+<lib-angular-inpost-geowidget
+            [widgetType]="GeowidgetTypeEnum.WIDGET"
+            (onPointSelect)="selectPoint($event)"
+ ></lib-angular-inpost-geowidget>
+```
 
-## Publishing
 
-After building your library with `ng build angular-inpost-geowidget`, go to the dist folder `cd dist/angular-inpost-geowidget` and run `npm publish`.
+Show widget as dropdown selector:
+```
+<lib-angular-inpost-geowidget
+            [widgetType]="GeowidgetTypeEnum.DROPDOWN"
+            (onPointSelect)="selectPoint($event)"
+ ></lib-angular-inpost-geowidget>
+```
 
-## Running unit tests
 
-Run `ng test angular-inpost-geowidget` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Show widget as modal window:
+```
+<lib-angular-inpost-geowidget
+            [widgetType]="GeowidgetTypeEnum.MODAL"
+            [(isModalOpened)]="isVisibled"   // isVisibled: boolean
+            (onPointSelect)="selectPoint($event)"
+ ></lib-angular-inpost-geowidget>
+```
