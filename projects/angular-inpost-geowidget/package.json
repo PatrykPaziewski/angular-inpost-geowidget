@@ -1,6 +1,6 @@
 {
   "name": "angular-inpost-geowidget",
-  "version": "1.0.1",
+  "version": "11.0.2",
   "description": "Angular library to easy handle inpost geowidget to enable to select a parcel (paczkomat) in your angular project.",
   "keywords": [
     "angular",
@@ -13,6 +13,10 @@
     "name": "Kacper Słotwiński",
     "email": "kacper.slotwinski@gmail.com",
     "url": "http://www.hky.pl"
+  },
+  "bugs": {
+    "email": "carbon.wpa@gmail.com",
+    "url": "https://github.com/carbon-wpa/angular-inpost-geowidget/issues"
   },
   "homepage": "https://github.com/carbon-wpa/angular-inpost-geowidget",
   "license": "MIT",

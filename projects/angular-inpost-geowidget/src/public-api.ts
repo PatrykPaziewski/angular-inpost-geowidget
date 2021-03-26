@@ -5,3 +5,4 @@
 export * from './lib/angular-inpost-geowidget.component';
 export * from './lib/angular-inpost-geowidget.module';
 export * from './lib/angular-inpost-geowidget.model';
+export * from './lib/angular-inpost-geowidget.service';

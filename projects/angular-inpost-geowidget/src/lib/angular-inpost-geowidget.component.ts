@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { get } from 'scriptjs';
 import { GeowidgetTypeEnum, IGeoWidgetInitConfig } from './angular-inpost-geowidget.model';
+import { AngularInpostGeowidgetService } from './angular-inpost-geowidget.service';
+import { Subscription } from 'rxjs';
 
 declare var easyPack;
 
@@ -11,7 +13,7 @@ declare var easyPack;
   `,
   styles: []
 })
-export class AngularInpostGeowidgetComponent implements OnInit {
+export class AngularInpostGeowidgetComponent implements OnInit, OnDestroy {
 
   @Input()
   public initialConfig: IGeoWidgetInitConfig = {};
@@ -22,16 +24,6 @@ export class AngularInpostGeowidgetComponent implements OnInit {
   @Input()
   public widgetType: GeowidgetTypeEnum = GeowidgetTypeEnum.WIDGET;
 
-  @Input()
-  public set isModalOpened(isOpened: boolean) {
-    if (isOpened) {
-      this._executeModalWidget();
-    }
-  }
-
-  @Output()
-  public isModalOpenedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   @Output()
   public onPointSelect: EventEmitter<any> = new EventEmitter<any>();
 
@@ -39,7 +31,9 @@ export class AngularInpostGeowidgetComponent implements OnInit {
 
   private _isScriptInitiated = false;
 
-  constructor() {
+  private _openedModalSubscription: Subscription;
+
+  constructor(private angularInpostGeowidgetService: AngularInpostGeowidgetService) {
   }
 
   public ngOnInit(): void {
@@ -48,6 +42,14 @@ export class AngularInpostGeowidgetComponent implements OnInit {
       easyPack.init(this.initialConfig);
       this._initMap();
     });
+
+    this._openedModalSubscription = this.angularInpostGeowidgetService.openModalWidget.subscribe(() => this._executeModalWidget());
+  }
+
+  public ngOnDestroy(): void {
+    if (this._openedModalSubscription) {
+      this._openedModalSubscription.unsubscribe();
+    }
   }
 
   private _initMap(): void {
@@ -72,7 +74,6 @@ export class AngularInpostGeowidgetComponent implements OnInit {
   private _executeModalWidget(): void {
     this._map = new easyPack.modalMap((point, modal) => {
       modal.closeModal();
-      this.isModalOpenedChange.emit(false);
       this.onPointSelect.emit(point);
     }, {width: 500, height: 600});
   }

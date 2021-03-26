@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GeowidgetTypeEnum } from 'angular-inpost-geowidget';
+import { AngularInpostGeowidgetService, GeowidgetTypeEnum } from 'angular-inpost-geowidget';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,9 @@ export class AppComponent {
 
   public GeowidgetTypeEnum = GeowidgetTypeEnum;
   public isModalOpened = false;
+
+  constructor(public angularInpostGeowidgetService: AngularInpostGeowidgetService) {
+  }
 
   public selectPoint(point: any): void {
     console.log('Selected point: ', point);

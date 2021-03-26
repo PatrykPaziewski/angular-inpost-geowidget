@@ -32,7 +32,9 @@ Show widget as modal window:
 ```
 <lib-angular-inpost-geowidget
             [widgetType]="GeowidgetTypeEnum.MODAL"
-            [(isModalOpened)]="isVisibled"   // isVisibled: boolean
             (onPointSelect)="selectPoint($event)"
  ></lib-angular-inpost-geowidget>
+
+// open modal by service
+<button (click)="angularInpostGeowidgetService.openModalWidget.next()">Open modal</button>
 ```
