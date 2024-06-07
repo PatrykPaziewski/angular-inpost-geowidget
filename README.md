@@ -1,10 +1,6 @@
-# Angular Inpost Geowidget Workspace
+# AngularInpostGeowidget
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
-
-## Testing the library
-Run `npm run-script build` to build a widget library locally. The output files will be stored in `/dist` folder.
-Run `npm start` for a dev server for angular-inpost-geowidget-example app. Navigate to `http://localhost:4200/`. This is a simple application which uses locally built an "angular-inpost-geowidget" and consumes it.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
 ## Using a widget
 
@@ -12,19 +8,33 @@ Run `npm start` for a dev server for angular-inpost-geowidget-example app. Navig
 2. Run `npm install angular-inpost-geowidget` to add a npm library to your project.
 3. Use widget component in template `<lib-angular-inpost-geowidget></lib-angular-inpost-geowidget>`
 
-## Versions
+## Examples of usage
 
-project support Angular with version 11 and 12.
+Basic usage as map widget:
+```
+<lib-angular-inpost-geowidget
+            [widgetType]="GeowidgetTypeEnum.WIDGET"
+            (onPointSelect)="selectPoint($event)"
+ ></lib-angular-inpost-geowidget>
+```
 
-## Parameters
 
-todo
+Show widget as dropdown selector:
+```
+<lib-angular-inpost-geowidget
+            [widgetType]="GeowidgetTypeEnum.DROPDOWN"
+            (onPointSelect)="selectPoint($event)"
+ ></lib-angular-inpost-geowidget>
+```
 
-## Demo
 
-todo
+Show widget as modal window:
+```
+<lib-angular-inpost-geowidget
+            [widgetType]="GeowidgetTypeEnum.MODAL"
+            (onPointSelect)="selectPoint($event)"
+ ></lib-angular-inpost-geowidget>
 
-## Contribute
-
-Project is still live  so if you want to help & contribute please don't hesitate and contact me.
-
+// open modal by service
+<button (click)="angularInpostGeowidgetService.openModalWidget.next()">Open modal</button>
+```

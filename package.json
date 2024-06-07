@@ -1,42 +1,31 @@
 {
   "name": "angular-inpost-geowidget",
   "version": "12.0.1",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve angular-inpost-geowidget-example",
-    "build": "ng build angular-inpost-geowidget",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+  "description": "Angular library to easy handle inpost geowidget to enable to select a parcel (paczkomat) in your angular project.",
+  "keywords": [
+    "angular",
+    "inpost",
+    "parcel",
+    "geowidget",
+    "paczkomaty"
+  ],
+  "author": {
+    "name": "Kacper Słotwiński",
+    "email": "kacper.slotwinski@gmail.com",
+    "url": "http://www.hky.pl"
   },
-  "private": true,
+  "bugs": {
+    "email": "carbon.wpa@gmail.com",
+    "url": "https://github.com/carbon-wpa/angular-inpost-geowidget/issues"
+  },
+  "homepage": "https://github.com/carbon-wpa/angular-inpost-geowidget",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "~17.0.0",
+    "@angular/core": "~17.0.0",
+    "scriptjs": "^2.5.9"
+  },
   "dependencies": {
-    "@angular/animations": "~12.0.0",
-    "@angular/common": "~12.0.0",
-    "@angular/compiler": "~12.0.0",
-    "@angular/core": "~12.0.0",
-    "@angular/forms": "~12.0.0",
-    "@angular/platform-browser": "~12.0.0",
-    "@angular/platform-browser-dynamic": "~12.0.0",
-    "@angular/router": "~12.0.0",
-    "rxjs": "~6.6.0",
-    "scriptjs": "^2.5.9",
-    "tslib": "^2.1.0",
-    "zone.js": "~0.11.4"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~12.0.0",
-    "@angular/cli": "~12.0.0",
-    "@angular/compiler-cli": "~12.0.0",
-    "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
-    "codelyzer": "^6.0.0",
-    "jasmine-core": "~3.7.0",
-    "jasmine-spec-reporter": "~5.0.0",
-    "ng-packagr": "^12.0.0",
-    "protractor": "~7.0.0",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.2.3"
+    "tslib": "^2.1.0"
   }
 }
