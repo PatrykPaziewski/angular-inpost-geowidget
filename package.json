@@ -21,8 +21,8 @@
   "homepage": "https://github.com/carbon-wpa/angular-inpost-geowidget",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "~17.0.0",
-    "@angular/core": "~17.0.0",
+    "@angular/common": "17.1.0",
+    "@angular/core": "~17.1.0",
     "scriptjs": "^2.5.9"
   },
   "dependencies": {
